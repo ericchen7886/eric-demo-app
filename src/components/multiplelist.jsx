@@ -51,8 +51,6 @@ const SimpleTable = (props) =>{
   );
 }
 
-
-
 export default class multiplelist extends Component{
   render(){
     return (

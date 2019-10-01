@@ -1,7 +1,5 @@
 import actionTypes from '../actions/actionTypes';
 
-// 這裡的Reducer我們改用另一種寫法，不再使用switch-case，方便程式碼擴展
-
 const reducers = {
   [actionTypes.removeAllTodo]: function(state, action ) {
     return removeAllTodo(state, action );
@@ -61,7 +59,6 @@ const removeTodo = (state, action ) => {
   return Object.assign({}, state, { todos: newTodos  });
 };
 
-// 消化beginFetchTodoList Action
 const beginFetchTodoList = (state, action ) => {
   console.log('beginFetchTodoList.....');
   // 若已經在載入資料了，無須異動state
@@ -73,7 +70,6 @@ const beginFetchTodoList = (state, action ) => {
   });
 };
 
-// 消化finishFetchTodoList Action
 const finishFetchTodoList = (state, action ) => {
   // 若已經沒有在載入資料，無須異動state
   console.log('finishFetchTodoList.....');
@@ -87,7 +83,6 @@ const finishFetchTodoList = (state, action ) => {
   });
 };
 
-// 消化recvFetchTodoListResult Action
 const recvFetchTodoListResult = (state, action ) => {
   console.log('recvFetchTodoListResult.....');
   // 若載入資料無內容，無須異動state
@@ -98,6 +93,6 @@ const recvFetchTodoListResult = (state, action ) => {
   ){
     return state;
   }
-  const newTodos = [...state.todos, ...action.payload.todos]; // 建立新的todos陣列
-  return Object.assign({}, state, { todos: newTodos  }); // 建立新的state物件並改變todos
+  const newTodos = [...state.todos, ...action.payload.todos]; 
+  return Object.assign({}, state, { todos: newTodos  }); 
 };
