@@ -120,7 +120,7 @@ export const fetchTodosFromServer = () => {
 		const deleteOption = {
 			method: 'DELETE',
 		}
-		//
+		
 		// console.log('API_URL',putOption);
 		fetch(API_URL, option)
 			.then(response => {
